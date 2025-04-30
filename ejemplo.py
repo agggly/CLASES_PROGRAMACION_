@@ -136,23 +136,95 @@ Mi primer condicion del mientras es que el FIN no sea igual a 0.
 
  
 
+CLASE DE 30/04 PRACTICA PROFESIONALIZANTE 
+CLASE DE 30/04 PRACTICA PROFESIONALIZANTE 
+lo de abajo i mean
 
+CONSIGNA: 
 
+Un centro de donaciones de sangre necesita registrar a las personas que se presentan para donar en un dia. Para ello,
+se ingresa la informacion de cada donante como ser nombre, edad
+y tipo de sangre. El registro de donantes continua mientras el operador no ingrese el nombre "FIN".
 
-
-
+Desarrolle un algoritmo que:
+Cuente la cantidad de donantes registrados
+Contar cuantas donaciones se hiciero para cada tipo de sangre
+Para cada registro, solo se debe aceptar la donacion si el donante es mayor de 18 años. Si no cumple, se debe informar que no puede donar 
 
     
+# Contadores
+total_donantes = 0
+tipo_sangre_A = 0
+tipo_sangre_B = 0
+tipo_sangre_AB = 0
+tipo_sangre_O = 0
 
+# Iniciar el ciclo while
+nombre_donante = input("Ingrese el nombre del donante (o FIN para terminar): ")
+while nombre_donante != "FIN":  # El ciclo continuará mientras el nombre no sea "FIN"
+    
+    edad = int(input("Ingrese la edad del donante: "))
+    
+    # Condición para verificar si el donante tiene 18 años o más
+    if edad < 18:
+        print("No puede donar. Debe ser mayor de 18 años.")
+        nombre_donante = input("Ingrese el nombre del donante (o FIN para terminar): ")
+        continue  # Si no cumple la edad, vuelve a pedir el nombre sin registrar al donante
 
+    tipo_sangre = input("Ingrese el tipo de sangre (A, B, AB, O): ")
+    
+    # Condicional para contar las donaciones por tipo de sangre
+    if tipo_sangre == "A":
+        tipo_sangre_A += 1
+    elif tipo_sangre == "B":
+        tipo_sangre_B += 1
+    elif tipo_sangre == "AB":
+        tipo_sangre_AB += 1
+    elif tipo_sangre == "O":
+        tipo_sangre_O += 1
+    else:
+        print("Tipo de sangre no válido, donación no registrada.")
+        nombre_donante = input("Ingrese el nombre del donante (o FIN para terminar): ")
+        continue  # Si el tipo de sangre no es válido, vuelve a pedir el nombre y no registra la donación
 
+    # Incrementa el contador de donantes válidos
+    total_donantes += 1
+    print("Donación registrada correctamente.")
 
+    # Pedir el siguiente donante
+    nombre_donante = input("Ingrese el nombre del donante (o FIN para terminar): ")
 
+# Mostrar los resultados al final
+print("\nResumen del día:")
+print(f"Total de donantes: {total_donantes}")
+print(f"Donaciones tipo A: {tipo_sangre_A}")
+print(f"Donaciones tipo B: {tipo_sangre_B}")
+print(f"Donaciones tipo AB: {tipo_sangre_AB}")
+print(f"Donaciones tipo O: {tipo_sangre_O}")
 
+(TODO LO DE ARRIBA ES CHAT GPT LMAO) 
+////////////////////////////////////////////////////////////////////
+# fin = (input("Para terminar ingrese FIN: "))
 
+total_donantes = 0
+tiposangre_a = 0
+tiposangre_b = 0
+tiposangre_ab = 0
+tiposangre_o = 0
+ 
+nombre_donante = (input("Ingrese su nombre o FIN para terminar: "))
+# while nombre_donante != "FIN":
+edad_donante = int (input("Ingrese su edad: "))
+tiposangre_donante = (input ("Ingrese su tipo de sangre: "))
+if edad_donante < 18:
+    print("No puede donar por ser menor de edad")
 
+if tiposangre_donante == "A":
+    tiposangre_a += 1 
+ elif tiposangre_donante = "B":
+    tiposangre_b += 1 
 
-
+(este es mi humilde codigo) 
 
 
 
