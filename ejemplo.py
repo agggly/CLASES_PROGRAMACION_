@@ -233,6 +233,60 @@ if tiposangre_donante == "A":
 
 
 
+////////////////////////////////////////////////////////////////7
+
+total_donantes = 0 
+ta_positivo = 0 
+ta_negativo = 0 
+tb_positivo = 0 
+tb_negativo = 0
+tab_positivo = 0 
+tab_negativo = 0 
+to_positivo = 0
+to_negativo = 0 
+
+nombre_donante = (input ("Ingrese su nombre o escriba FIN para terminar: "))
+while nombre_donante != "FIN": 
+    edad = int(input("Ingrese su edad: "))
+    if edad < 18: 
+        print("Usted no puede donar, debe ser mayor de 18 años.")
+        continue 
+    
+tiposangre = (input("Ingrese su TIPO de sangre (A+- B+-, AB+-, O+-): "))
+
+
+if tiposangre == "A+":
+    ta_positivo =+1 
+elif tiposangre == "A-":
+    ta_negativo =+1 
+elif tiposangre == "B+":
+    tb_positivo =+1
+elif tiposangre == "B-":
+    tb_negativo =+1
+elif tiposangre == "AB+":
+    tab_positivo =+1
+elif tiposangre == "AB-":
+    tab_negativo =+1 
+elif tiposangre == "O+":
+    to_positivo =+1 
+elif tiposangre == "O-":
+    to_negativo =+1 
+else: 
+    print("Tipo de sangre invalido.")
+
+total_donantes = total_donantes + 1 
+
+print("DONANTES REGISTRADOS", total_donantes)
+print("TIPO DE SANGRE A +", ta_positivo)
+print("TIPO DE SANGRE A-", ta_negativo)
+print("TIPO DE SANGRE B+", tb_positivo)
+print("TIPO DE SANGRE B-", tb_negativo)
+print("TIPO DE SANGRE AB+", tab_positivo)
+print("TIPO DE SANGRE AB-", tab_negativo)
+print("TIPO DE SANGRE O+", to_positivo)
+print("TIPO DE SANGRE O-", to_negativo)
+
+
 
 
 
