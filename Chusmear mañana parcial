@@ -1,0 +1,72 @@
+Proceso Fabrica
+    // Declaración de variables
+    Definir turno Como Cadena;
+    Definir CantPiezas, TotalPiezas Como Entero;
+    Definir TurnoManianaCont, TurnoTardeCont, TurnoNocheCont Como Entero;
+    Definir TurnosTotal, Entre200y500, Entre600y800y1000, Menos100 Como Entero;
+
+    // Inicialización de variables
+    CantPiezas <- 0;
+    TotalPiezas <- 0;
+    TurnoManianaCont <- 0;
+    TurnoTardeCont <- 0;
+    TurnoNocheCont <- 0;
+    TurnosTotal <- 0;
+    Entre200y500 <- 0;
+    Entre600y800y1000 <- 0;
+    Menos100 <- 0;
+
+    // Primer ingreso
+    Escribir "Ingrese la cantidad de piezas (valor negativo para finalizar):";
+    Leer CantPiezas;
+
+    // Bucle principal
+    Mientras CantPiezas >= 0 Hacer
+        TurnosTotal <- TurnosTotal + 1;
+        TotalPiezas <- TotalPiezas + CantPiezas;
+
+        Escribir "Ingrese el turno (mañana, tarde, noche):";
+        Leer turno;
+
+        Si turno = "mañana" Entonces
+            TurnoManianaCont <- TurnoManianaCont + 1;
+        Sino
+            Si turno = "tarde" Entonces
+                TurnoTardeCont <- TurnoTardeCont + 1;
+            Sino
+                Si turno = "noche" Entonces
+                    TurnoNocheCont <- TurnoNocheCont + 1;
+                FinSi
+            FinSi
+        FinSi
+
+        // Condiciones
+        Si CantPiezas >= 200 Y CantPiezas <= 500 Entonces
+            Entre200y500 <- Entre200y500 + 1;
+        FinSi
+
+        Si CantPiezas = 600 O CantPiezas = 800 O CantPiezas = 1000 Entonces
+            Entre600y800y1000 <- Entre600y800y1000 + 1;
+        FinSi
+
+        Si CantPiezas < 100 Entonces
+            Menos100 <- Menos100 + 1;
+        FinSi
+
+        // Leer próxima cantidad
+        Escribir "Ingrese la cantidad de piezas (valor negativo para finalizar):";
+        Leer CantPiezas;
+    FinMientras
+
+    // Resultados finales
+    Escribir "-----------------------------------------------";
+    Escribir "Turnos registrados en total: ", TurnosTotal;
+    Escribir "Cantidad total de piezas producidas: ", TotalPiezas;
+    Escribir "Turnos con producción entre 200 y 500: ", Entre200y500;
+    Escribir "Turnos con producción exactamente 600, 800 o 1000: ", Entre600y800y1000;
+    Escribir "Turnos con menos de 100 piezas: ", Menos100;
+    Escribir "Turnos por franja horaria:";
+    Escribir "  Mañana: ", TurnoManianaCont;
+    Escribir "  Tarde: ", TurnoTardeCont;
+    Escribir "  Noche: ", TurnoNocheCont;
+FinProceso
