@@ -1,0 +1,59 @@
+Proceso Carga
+    Definir TotalCajas, PesoAcumulado, CajasLivianas, CajasMedianas, CajasPesadas, CajaPeligrosa, Peso Como Real;
+    Definir Caja15kg, Caja30kg Como Real;
+	
+    TotalCajas <- 0; 
+    PesoAcumulado <- 0; 
+    CajasLivianas <- 0;
+    CajasMedianas <- 0;
+    CajasPesadas <- 0;
+    CajaPeligrosa <- 0;
+    Caja15kg <- 0;
+    Caja30kg <- 0;
+	
+    Escribir "Ingrese la cantidad de kilos de la caja, escriba un número negativo para finalizar: ";
+    Leer Peso;
+	
+    Mientras Peso >= 0 Hacer
+        TotalCajas <- TotalCajas + 1;
+		
+        Si Peso < 10 Entonces
+            CajasLivianas <- CajasLivianas + 1;
+        Sino
+            Si Peso >= 10 Y Peso <= 25 Entonces
+                CajasMedianas <- CajasMedianas + 1;
+            Sino
+                Si Peso > 25 Entonces
+                    CajasPesadas <- CajasPesadas + 1;
+                FinSi
+            FinSi
+        FinSi
+		
+        Si Peso > 50 Entonces
+            CajaPeligrosa <- CajaPeligrosa + 1;
+        FinSi
+		
+        Si Peso = 15 Entonces
+            Caja15kg <- Caja15kg + 1;
+        FinSi
+		
+        Si Peso = 30 Entonces
+            Caja30kg <- Caja30kg + 1;
+        FinSi
+		
+        PesoAcumulado <- PesoAcumulado + Peso;
+		
+        Escribir "Ingrese la cantidad de kilos de la caja, escriba un número negativo para finalizar: ";
+        Leer Peso;
+    FinMientras
+	
+    Escribir "////////////////////////////////////////";
+    Escribir "Total de cajas registradas: ", TotalCajas;
+    Escribir "Peso total acumulado: ", PesoAcumulado;
+    Escribir "Cantidad de cajas livianas: ", CajasLivianas;
+    Escribir "Cantidad de cajas medianas: ", CajasMedianas;
+    Escribir "Cantidad de cajas pesadas: ", CajasPesadas;
+    Escribir "Hubieron: ", CajaPeligrosa, " cajas peligrosas";
+    Escribir "Cajas exactamente de 15 kg: ", Caja15kg;
+    Escribir "Cajas exactamente de 30 kg: ", Caja30kg;
+FinProceso
